@@ -121,9 +121,11 @@
         - (Assuming $\omega_0\equiv\omega_z$)
     - notice that $H_i \sim k\cdot \hat{a}+l\cdot\hat{a}^\dagger$
 - couple manifold $\ket{g,n} \lrarr \ket{e,n+s}$
+    - connection strength: $\bra{g,n}H_i\ket{e,n+s}=\frac{\hbar}{2}\Omega e^{i(\phi-\omega_l t)}\bra{n}e^{i(\vec{k}\cdot\vec{x})}\ket{n+s}$
     - by setting $\Delta\approx s\omega_z$ , with $s=k-l$
     - $s > 0$ : blue sideband ; $s < 0$ : red sideband ; $s = 0$ : carrier
-    
+    - <span style='color:red'>BUT I remember only s=1 works??</span>
+
 
 ----
 #### 3.3 Secular Motion as a State Mediator

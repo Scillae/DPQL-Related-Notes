@@ -202,7 +202,7 @@ $$\langle \Delta E \rangle =  \hbar\overrightarrow{v}\overrightarrow{k_l} + \fra
 
 Multiply this with the scatter rate $\Gamma \rho_{ee}$: 
 
-$$\frac{d}{dt} \langle \Delta E \rangle =\left[\hbar\overrightarrow{v}\overrightarrow{k_l} + \frac{\hbar^2 k_l^2}{2m}(1+\kappa)\right] \Gamma \rho_{ee} $$.
+$\frac{d}{dt} \langle \Delta E \rangle =\left[\hbar\overrightarrow{v}\overrightarrow{k_l} + \frac{\hbar^2 k_l^2}{2m}(1+\kappa)\right] \Gamma \rho_{ee} $.
 
 Consider $\Gamma \rho_{ee}$ near $v=0$ with the doppler effect: 
 
@@ -236,7 +236,7 @@ EOM:
 
 $$\frac{\partial}{\partial t}\frac{1}{2}Mv^2 = Mv_z \frac{\partial z }{\partial t} = Fv_z =-\alpha v_z^2$$
 
-$$\frac{\partial E}{\partial t} = \frac{\partial}{\partial t}(\frac{1}{2} m(v_x^2+v_y^2+v_z^2) ) = \frac{-2\alpha }{M}E :=-\frac{E}{\tau_{damp}}$$ Hence the energy, $E$, hence the temprature $T$ will decrease. 
+$\frac{\partial E}{\partial t} = \frac{\partial}{\partial t}(\frac{1}{2} m(v_x^2+v_y^2+v_z^2) ) = \frac{-2\alpha }{M}E :=-\frac{E}{\tau_{damp}}$ Hence the energy, $E$, hence the temprature $T$ will decrease. 
 
 Force from single beam: $\overrightarrow{F} = \overrightarrow{F_{abs}} + \overrightarrow{\delta F_{abs}}+ \overrightarrow{F_{spo}}+ \overrightarrow{\delta F_{spo}}$ where $_{abs}$ means absorption process and $_{spo}$ means spontaneous emissions, the force from which cause the atom to recoil and never come to a rest. 
 

@@ -1,3 +1,4 @@
+<!--<span style='font-family:"Segoe print"'>-->
 # Sideband Cooling of Atomic and Molecular Ions
 
 ### Abstract
@@ -121,10 +122,20 @@
         - (Assuming $\omega_0\equiv\omega_z$)
     - notice that $H_i \sim k\cdot \hat{a}+l\cdot\hat{a}^\dagger$
 - couple manifold $\ket{g,n} \lrarr \ket{e,n+s}$
-    - connection strength: $\bra{g,n}H_i\ket{e,n+s}=\frac{\hbar}{2}\Omega e^{i(\phi-\omega_l t)}\bra{n}e^{i(\vec{k}\cdot\vec{x})}\ket{n+s}$
+    - connection strength: $\bra{g,n}H_i\ket{e,n+s}=\frac{\hbar}{2}\Omega_0 e^{i(\phi-\omega_l t)}\bra{n}e^{i(\vec{k}\cdot\vec{x})}\ket{n+s}$
+        - effective Rabi-freq: $\Omega_{n,n+s}=\Omega_0\bra{n}e^{i(\vec{k}\cdot\vec{x})}\ket{n+s}=\Omega_0\bra{n}e^{i\eta(\hat{a}+\hat{a}^\dagger)}\ket{n+s}=\Omega_0e^{-\eta/2}\eta^{|s|}\sqrt{\frac{n_<!}{n>!}}L_{n<}^{|s|}(\eta^2)$
+            - $n_<$ is the lesser of n and n+s
+            - $L^{\alpha}_n(X)$ is the generalized Languerre Polynomial
+        - this expression represents conservation of momentum
+            - the change in Rabi freq comes from the wave-function overlap of the states in momentum space, separated by the photon momentum $\hbar k$
     - by setting $\Delta\approx s\omega_z$ , with $s=k-l$
     - $s > 0$ : blue sideband ; $s < 0$ : red sideband ; $s = 0$ : carrier
-    - <span style='color:red'>BUT I remember only s=1 works??</span>
+    - <span style='color:#f7aed0'>BUT I remember only s=1 works?? solved: in LD regime</span>
+##### 3.2.1 Lamb-Dicke Regime
+- $\bra{n}r^2\ket{n}\ll1/k$ , or $\eta\sqrt{2n+1}\ll1$
+    - the spread of the motional wave function is much less than the wavelength of the light.
+- $H_{LD}=\frac{\hbar}{2}\Omega_0\ket{e}\bra{g}(1+i\eta(\hat{a}e^{-i\omega_zt}+\hat{a}^\dagger e^{i\omega_zt}))e^{i(\phi-\Delta t)}+\textrm{h.c.}$
+    - only 3 resonances: $1, \hat{a}, \hat{a}^\dagger$
 
 
 ----
@@ -148,3 +159,4 @@
 ----
 #### 5.3 Detecting the Internal State
 ----
+<!--</span>-->

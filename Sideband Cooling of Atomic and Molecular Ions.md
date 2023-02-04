@@ -120,6 +120,7 @@
         - $\Omega_0=\Omega\cdot C_0=\Omega/(1+q/2)$
         - $\omega_z=\beta\Omega_{\textrm{rf}}/2$ is applied.
         - (Assuming $\omega_0\equiv\omega_z$)
+            - <span style='color:red'>why??</span>
     - notice that $H_i \sim k\cdot \hat{a}+l\cdot\hat{a}^\dagger$
 - couple manifold $\ket{g,n} \lrarr \ket{e,n+s}$
     - connection strength: $\bra{g,n}H_i\ket{e,n+s}=\frac{\hbar}{2}\Omega_0 e^{i(\phi-\omega_l t)}\bra{n}e^{i(\vec{k}\cdot\vec{x})}\ket{n+s}$
@@ -136,17 +137,87 @@
     - the spread of the motional wave function is much less than the wavelength of the light.
 - $H_{LD}=\frac{\hbar}{2}\Omega_0\ket{e}\bra{g}(1+i\eta(\hat{a}e^{-i\omega_zt}+\hat{a}^\dagger e^{i\omega_zt}))e^{i(\phi-\Delta t)}+\textrm{h.c.}$
     - only 3 resonances: $1, \hat{a}, \hat{a}^\dagger$
-
-
+        - they are operators on *motional states*
+    - $\Delta=0$ : carrier, $H_{car}=\frac{\hbar}{2}\Omega_0(\ket{e}\bra{g}+\ket{g}\bra{e})$
+        - $\ket{g,n}\lrarr\ket{e,n}$
+        - $\Omega=\Omega_0$
+    - $\Delta=-\omega_z$ : red sideband, $H_{rsb}=\frac{\hbar}{2}\Omega_0\eta(\hat{a}\ket{e}\bra{g}+\hat{a}^\dagger\ket{g}\bra{e})$
+        - $\ket{g,n}\lrarr\ket{e,n-1}$
+        - $\Omega=\Omega_0\eta\sqrt{n}$
+    - $\Delta=\omega_z$ : blue sideband, $H_{bsb}=\frac{\hbar}{2}\Omega_0\eta(\hat{a}^\dagger\ket{e}\bra{g}+\hat{a}\ket{g}\bra{e})$
+        - $\ket{g,n}\lrarr\ket{e,n+1}$
+        - $\Omega=\Omega_0\eta\sqrt{n+1}$
 ----
 #### 3.3 Secular Motion as a State Mediator
+- Example of mapping information from spectropy atom onto auxiliary atom
+    - $\psi_1=(\alpha\ket{g}_s+\beta\ket{e}_s)\ket{g}_a\ket{0}_m$ : initial state
+    - $\psi_2=(\alpha\ket{g}_s\ket{0}_m+\beta\ket{g}_s\ket{1}_m)\ket{g}_a$ : a $\pi$ pulse on red sideband of the *spectropy* ion
+    - $\psi_3=\ket{g}_s(\alpha\ket{g}_a+\beta\ket{e}_a)\ket{0}_m$ : a $pi$ pulse on red sideband of the *auxiliary* ion
+- Sympathetic Recoil Spectroscopy
+    - cool S and A ion to full ground state (ground state disappear) ; if S ion scatters A photon on the blue sideband (but different freq, cuz A needs energy to move as well?), A ion opens rsb as well. 
+        - no more knowledge provided; only high detection efficiency with high precision.
 ----
+**decay rate $\frac{1}{\tau} = \Gamma$ line width**, related to Fourier transformation  
+- $\Psi_f(\vec{r}, t)=\Psi_f(\vec{r}, 0) \exp \left(-i E_f(t / \hbar)-t / \tau\right) = (\textrm{Fourier}) \int \frac{\hbar / \tau}{\left(E_f-E\right)^2+(\hbar / \tau)^2} e^{-i E_f(t / \hbar)} dE$  
+- Writing $\hat{U}(t)=e^{i\hat{H}t/\hbar}$ for $\Psi_f(\vec{r}, t)=\hat{U}(t)\Psi_f(\vec{r}, 0)$ gives $H=-\frac{i\hbar}{\tau}$ corresponding to imaginary energy that broadens the lorentzian lineshape (but why? Any profound insights available?)
+- $\Gamma$ , in the context, refer to ion's linewidth, not laser.
 ----
 ### 4. Cooling of Trapped Ions
+- Two regimes of interest:
+    - $\omega_z\ll\Gamma$ : Doppler cooling
+        - timescale on which the velocity of the ion changes is smaller than the time it emit and absorb photons.
+            - velocity dependent radiation pressure.
+        - the ion acts as a free particle with a time-modulated Doppler shift of the cooling light.
+    - $\omega_z\ll\Gamma$ : sideband cooling
+        - distinct sidebands appear
+        - sidebands $\sim$ ion's harmonic motion 
+        - the laser is tuned so the energy of the absorbed photon is less than the energy of spontaneously emitted photons
+            - red sideband $\sim \ket{g,n}\rarr\ket{e,n-1}$
 ----
 #### 4.1 Doppler Cooling
+- $\lang\Delta E_{kin}\rang=\hbar\vec{v}\cdot\vec{k}_l+\frac{\hbar^2k^2}{2m}(1+\kappa)$ , the average change in kinetic energy per scattering event in the direction of the beam
+- steady state (limit) of Doppler cooling
+    - $E_{kin}=\frac{1}{2}m\lang v^2\rang _v=\frac{\hbar(\Gamma^2+4\Delta^2)}{32\Delta}(1+\kappa)$
+    - $E_{kin,min}=\frac{\hbar\Gamma}{8}(1+\kappa)$ at $\Delta=\Gamma/2$
+        - $k_BT_D=\frac{\hbar\Gamma}{4}(1+\kappa)$ gives Doppler temperature $T_D$
+- $\kappa$ measures isotropy:
+    - $\kappa=1/3$ : isotropic emission & single laser
+    - $\kappa=1$ : isotropic emission & isotropic laser
+    - $\kappa=??$ : isotropic emission & single laser perpendicular to quantization axis
+        - ion is cooled to a lower state in the chosen direction but heated in the other two directions
+    - the ion can simultaneously be cooled in *all 3 directions* with *a single laser*, by choosing the angle of the laser, so that $\vec{k}_l$ has a finite overlap with all the principle axes.
+        - the ion trap defines a quantization axis
+        - easiest choice: $45^\circ$ with respect to all 3 axes $\rarr k_BT_D=\hbar\Gamma/2$ , the normal value.
+        - however, this requires all the motional frequencies ($\Omega_x, \Omega_y,\Omega_z$) are different (on a timescale set by the cooling time)
 ----
 #### 4.2 Sideband Cooling
+- $\ket{g,n}\rarr\ket{e,n-1}\rarr\ket{g,n-1}\rarr...\rarr\ket{g,1}\rarr\ket{e,0}\rarr\ket{g,0}$
+    - Red-detuned laser excites ion's internal state and reduce its motional state. 
+    - In the Lamb-Dicke limit, decay from the excited state primarily happen on the carrier.
+- Rate Equation Model
+    - $R_n=\Gamma\rho_{ee}=\Gamma\frac{|\Gamma|^2/4}{\delta^2+|\Omega|^2/2+\Gamma^2/4}=\Gamma\frac{(\Omega\eta\sqrt{n})^2}{2(\Omega\eta\sqrt{n})^2+\Gamma^2}$
+- Heating process
+    - in reality, non-resonant excitation prevents the ground state from being a perfect 'dark state'
+    - Process 1: excitation on the carrier and re-emission on the red sideband
+        - $R_1=p_0\frac{\Omega^2/4}{\omega_z^2}\Gamma\tilde{\eta}^2$
+    - Process 2: excitation on the blue sideband and re-emission on the carrier
+        - $R_2=p_0\frac{\eta^2\Omega^2/4}{2\omega_z^2}\Gamma$
+    - $p_0$ population in $n=0$
+    - $\boldsymbol{\tilde{\eta}}\neq\boldsymbol{\eta}$ !!!
+        - $\boldsymbol{\tilde{\eta}}$ for spontaneous decay
+        - $\boldsymbol{\eta}$ for absorption
+        - because the emission process is not limited to the same direction as the absorption process
+        - in a 3-level cooling scheme, the emission wavelength can further be different from the absorption wavelength
+- $\lang n\rang=n_{ss}+(n_0-n_{ss})e^{-Wt}$ , assuming 2-level atom
+    - $n_0$ mean quantum number
+    - $W=\frac{\Gamma\eta^2\Omega^2}{2\eta^2\Omega^2+\Gamma}$ : cooling rate
+    - $n_ss$ : steady state quantum number
+        - $n_ss\approx\frac{\Gamma^2}{4\omega_z^2}(\frac{\tilde{\eta}^2}{\eta^2}+\frac{1}{4})$ , at $\eta\Omega\ll\Gamma$
+        - $\lang n\rang\approx0$ at $\omega_z\gg\Gamma$
+            - sideband region
+            - off-resonant scattering becomes negligible, and the ion can be cooled to the ground state with high probability.
+- With no external heating mechanisms, only off-resonant excitation on unwanted sidebands can keep the ion from being cooled to the ground state.
+
 ----
 #### 4.3 Determination of the Motional State
 ----
@@ -154,9 +225,33 @@
 ### 5. Manipulating the $^{40}\textrm{Ca}^+$ ion
 ----
 #### 5.1 Doppler Cooling
+- $\lang n\rang\sim10^7$ for ions just trapped. Need fast scattering.
+- $\textrm{S}_{1/2}\lrarr \textrm{P}_{1/2}$ , the dipole allowed transition, provide decay rate of $2\pi\cdot20.7$ MHz
+- Population leakage: $\textrm{P}_{1/2}\rarr\textrm{D}_{3/2}$ is open, but $\textrm{D}_{3/2}$ is stable (1Hz).
+    - *repumping* on $\textrm{P}_{1/2}\lrarr\textrm{D}_{3/2}$
+    - heating by repumping is negligible:
+        - $\textrm{P}_{1/2}\rarr\textrm{D}_{3/2}$ 1 out of 12 cycles
+        - repumping at infrared, cooling at blue
+- $T_D=0.5$ mK, corresponding to $\lang n\rang\sim20\gg1$ for $\omega_z=2\pi\cdot500$ kHz.
+   
 ----
 #### 5.2 Sideband Cooling
+- $\mathrm{S}_{1 / 2} \leftrightarrow \mathrm{D}_{3 / 2}$ or $\mathrm{S}_{1 / 2} \leftrightarrow \mathrm{D}_{5 / 2}$ quadrupole transitions
+    -  natural lifetimes of 1 s.
+- $\mathrm{S}_{1 / 2} \leftrightarrow \mathrm{D}_{5 / 2}$ in addition provides the ability to easily discriminate between the two states
+- Long lifetime of $\mathrm{D}_{5 / 2}\rarr$ coupling to an auxiliary level (e.g. $\mathrm{D}_{5 / 2} \leftrightarrow \mathrm{P}_{3 / 2}$), but cannot drive strongly, by which the sideband resolution is compromised.
+- scheme: use a low power / interleaved pulse with excitation on  $\mathrm{S}_{1 / 2} \leftrightarrow \mathrm{D}_{5 / 2}$ , and subsequent repumping to $\mathrm{S}_{1 / 2}$ via $\mathrm{P}_{3 / 2}$
+
 ----
 #### 5.3 Detecting the Internal State
+- scattering at saturation 
+- *electron shelving* $\sim$ fluorescence
+    - to 'shelve' the electron in a state in which it does NOT fluoresce 
+        - e.g. shelve to the metastable $\mathrm{D}_{5 / 2}$ in $^{40}\textrm{Ca}^+$. Then driving $\textrm{S}_{1/2}\lrarr \textrm{P}_{1/2}$ makes ion fluoresce if at ground but not if shelved to the metastable state.
+            - long lifetime of metastable states produces high fidelity.
+- On the narrow transition, to selectively transfer the ion depending on the motional state is possible, and motional state can be mapped onto the internal state.
+    - <span style="color:#66ccff"> I've learned this?? </span>
+    
+
 ----
 <!--</span>-->

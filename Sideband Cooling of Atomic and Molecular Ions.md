@@ -220,6 +220,33 @@
 
 ----
 #### 4.3 Determination of the Motional State
+- to compare the strength of red sideband and blue sideband
+    - at ground, red sideband $\rarr$ 0 strength
+##### 4.3.1 Excitation on the Red Sideband
+- $P_n=\frac{\langle n\rangle^n}{(\langle n\rangle+1)^{n+1}}$ gives the (Maxwell-Boltzmann) probability distribution of the particle's motional (Fock) state.
+    - $\lang n\rang$ is the weighted ($P_n\cdot n$) average
+- $\rho_{\mathrm{RSB}}=\sum_{n=1}^{\infty} \frac{\langle n\rangle^n}{(\langle n\rangle+1)^{n+1}} \sin ^2\left(\Omega_{n, n-1} t / 2\right)$ gives the probability of ion resonant with the *Red* sideband laser
+- $\rho_{\mathrm{BSB}}=\sum_{n=0}^{\infty} \frac{\langle n\rangle^n}{(\langle n\rangle+1)^{n+1}} \sin ^2\left(\Omega_{n, n-1} t / 2\right)$ gives the probability of ion resonant with the *Blue* sideband laser
+- $\lang n\rang=\frac{\rho_{\mathrm{RSB}}}{\rho_{\mathrm{BSB}}-\rho_{\mathrm{RSB}}}$ as result.
+##### 4.3.2 Rabi Oscillations on Motion-Sensitive Transitions
+- in L-D regime, $\Omega_{n,n+s}\sim\ket{n}$
+    - $\Omega_{n,n+s}$ : coupling strength between motional $\ket{n} \lrarr\ket{n+s}$
+    - $\rho_{e e}(t)=\frac{1}{2}\left(1-\sum_{n=0}^{\infty}\left|c_n\right|^2 \cos \left(\Omega_{n, n} t / 2\right)\right)$
+        - the oscillation appear damped due to interference between the different frequencies $\Omega_{n,n}$
+- band choice $\sim$ region of interest
+    - low excitation: blue sideband
+        - higher slope (more reachable states??)
+    - high excitation: carrier
+        - 1st sideband is almost constant at high excitations
+        - population spread across many states
+- dephasing method $\rarr$ (potentially) determine occupation of the individual motional states ($|c_n|^2$) by Fourier transforming the signal (??)
+##### 4.3.3 Sideband Strength Comparison
+- Outside the L-D limit, higher order sidebands starts to appear, so a full thermal Maxwell-Boltzmann distribution is required:
+    - $P_n=\frac{e^{-\left(n+\frac{1}{2}\right) \hbar \omega / k_B T}}{Z(T)}$
+- expected average excitation on the $s^{th}$ sideband (for a pulse with length $t$)
+    - $\rho_{e e}=\sum_{n=0}^{\infty} P_n \sin ^2\left(\Omega_{n, n+s} t / 2\right)$
+- different Rabi frequencies between the different motional levels $\rarr$ unique combination of *sideband excitation depending on the motional temperature*
+
 ----
 ----
 ### 5. Manipulating the $^{40}\textrm{Ca}^+$ ion
@@ -252,6 +279,65 @@
 - On the narrow transition, to selectively transfer the ion depending on the motional state is possible, and motional state can be mapped onto the internal state.
     - <span style="color:#66ccff"> I've learned this?? </span>
     
+## Experiments with Trapped Ions
+----
+### 11 Experimental Equipment and Methods
+----
+#### 11.1 Confinement of Ions
+----
+##### 11.1.1 The Linear Paul Trap
+----
+##### 11.1.2 Vacuum System
+##### 11.1.3 Generation of Ions
+- single calcium atoms are obtained from metallic calcium placed in a heated oven at $T\simeq 400C^\circ \sim 500C^\circ$
+    - constant atomic beam through a small opening (due to vapor pressue) pointing at the trap center
+- 272 nm laser ionizes calcium atoms through resonance-enhanced two photon process
+----
+#### 11.2 Imaging System
+- $\textrm{Ca}^+$ resonant with the light at 397 nm and 866 nm
+----
+#### 11.3 Optical Geometry and Light Sources
+----
+#### 11.4 Control System
+----
+#### 11.5 Experimental Procedures
+##### 11.5.1 Doppler Cooling
+- 397 nm ($4^2\mathrm{S}_{1 / 2} \leftrightarrow 4^2\mathrm{P}_{1 / 2}$) with 866 nm repumping ($3^2\mathrm{D}_{3 / 2} \leftrightarrow 4^2\mathrm{P}_{1 / 2}$)
+    - scattered light is used to detect the ions
+    - 500 μW detuned −20 MHz for readout and initial Doppler cooling followed by 10 μW detuned −40 MHz in the final Doppler cooling stage (why larger detuning?? slower atom should corr. to smaller doppler shift??)
+##### 11.5.2 State Preparation
+- 729 nm $\mathrm{S}_{1 / 2}\left(m_J=+\frac{1}{2}\right) \leftrightarrow \mathrm{D}_{5 / 2}\left(m_J=-\frac{1}{2}\right)$ and 854 nm $\mathrm{D}_{5 / 2} \leftrightarrow \mathrm{P}_{3 / 2}$
+    - $\mathrm{P}_{3 / 2} \rarr \mathrm{S}_{1 / 2}$ : spontaneous decay
+    - eventually $\mathrm{S}_{1 / 2}\left(m_J=+\frac{1}{2}\right) \sim 0$ 
+    - $\mathrm{P}_{3 / 2} \leftrightarrow \mathrm{D}_{3 / 2}$ is also allowed, leaking
+        - 866 nm ($3^2\mathrm{D}_{3 / 2} \leftrightarrow 4^2\mathrm{P}_{1 / 2}$) repumping
+
+----
+### 12 Sideband Cooling and Motional Dynamics
+----
+#### 12.1 Spectroscopy on the $S_{1/2}\lrarr D_{5/2}$ Transition
+- $\textrm{D}_{5/2}$ is metastable
+----
+##### 12.1.1 Zeeman Splitting
+- 
+----
+#### 12.2 Dynamics after Doppler Cooling
+----
+#### 12.3 Sideband Cooling
+----
+#### 12.4 Dynamics after Sideband Cooling
+----
+#### 12.5 Motional Decoherence
+----
+
+----
+#### Resonance-enhanced multiphoton ionization (REMPI)
+-  first m photons are simultaneously absorbed by an atom or molecule in the sample to bring it to an excited state. Other n photons are absorbed afterwards to generate an electron and ion pair. (m+n REMPI)
+- resonance enhanced effect: probability of real transition is many ordres of magnitude higher than that of the virtual transition.
+    - if the energy of m photons does not match any state, an off-resonant transition can occur with an energy defect $\Delta E$; however, the electron is very unlikely to remain in that state: for large detuning, it resides there only during the time $\Delta t$.
+----
+#### Level Diagram of the $^{40}\textrm{Ca}^+$ ion
+<img src="Images/level_diagram_40Ca_ion.png" alt="level_diagram_40Ca_ion.png" width="1000000"/>
 
 ----
 <!--</span>-->

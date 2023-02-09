@@ -314,20 +314,50 @@
 
 ----
 ### 12 Sideband Cooling and Motional Dynamics
+- quadrupole interaction in quantum picture(!!)
 ----
 #### 12.1 Spectroscopy on the $S_{1/2}\lrarr D_{5/2}$ Transition
-- $\textrm{D}_{5/2}$ is metastable
 ----
 ##### 12.1.1 Zeeman Splitting
-- 
+- $\textrm{D}_{5/2}$ is metastable
+- spectrum is severely affected by micromotion
+    - without micromotion, excitation $\sim$ MHz (motional sidebands) around the different Zeeman transitions
+    - how to compensate it??
+##### 12.1.2 Motional Sidebands
+- Motional sideband detuning $\delta_{ms} \ll \delta{z}$ Zeeman shift
+- Secular motion $\sim$ Motional sideband
+- after Doppler cooling, for a shallow axial potential, $\lang n\rang\sim 20$
+    - so only 3 sidebands visible
+    - (expected still an overall bump to suppress the other sidebands??)
+    - not in L-D limit
+- Fig 12.4: why higher temperature makes farther sidebands relatively more visible??
 ----
 #### 12.2 Dynamics after Doppler Cooling
+- Fig 12.5 Damped Rabi oscillation.
+    - why damped??
+        - there exist interactions with uncontrolled degrees of freedom in environment, leading to decoherence and/or dissipation
+        - Evan: T2 dephasing $\rarr \frac{1}{2}$ mixture of $\ket{g} \& \ket{e}$.
+- the dephasing in the Rabi oscillations also reveals information about the motional distribution
+    - to map out the exact population of each state without assuming a thermal distribution
+    - if the motional distribution is spread across many levels, then to rely on a thermal model is necessary.
 ----
 #### 12.3 Sideband Cooling
+- $\lang n\rang=20\rarr 1\%\ket{n}\simeq80$
+- 2nd RSB for fast cooling first, then 1st RSB, then 1st RSB with lowered power (suppressing off-resonance heating)
+- Fig 12.7: after cooling, RSB excitation is suppressed to $\sim 0$, whereas BSB not $\sim 0$ (effect not shown).
+- broad line shape before sideband cooling $\sim$ larger coupling strength between $\ket{n}$ and $\ket{\psi_{int}}$ (far from L-D regime)
 ----
 #### 12.4 Dynamics after Sideband Cooling
+- at $\ket{g}$ , coupling strength is well defined (L-D regime), motional dephasing vanishes (Fig 12.9).
 ----
 #### 12.5 Motional Decoherence
+- motional coherence is crucial, if the secular motion is used as a quantum bus (transmitting information between ions)
+- At longer delays, more population is excited out of the ground state and the red sideband increases as seen in Figure 12.10.
+- $\lang n\rang$ can be deduced by comparing the strength of the red and blue sidebands for different delays, as pictured in Figure 12.11a
+- "Anomalous heating" $\sim S_E(\omega_z)\sim1/d^4$ , noise spectral density of electrodes
+    - heating rate along the axial direction: $\frac{dn}{dt}=\frac{q^2}{4m\hbar\omega_z}S_E(\omega_z)$
+        - q: charge, m: mass of the ion.
+    - Expected: $S_E(\omega_z)\sim 1/\omega_z$ , $\frac{dn}{dt}\sim 1/\omega_z^2$
 ----
 
 ----

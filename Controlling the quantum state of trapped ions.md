@@ -133,8 +133,52 @@
     - $\Gamma_{micromotion}\ll\Gamma_{laser}$, so micro-motion is not worried about 
 ----
 #### 3.2.1 Doppler cooling
+- $F_{Doppler}=\hbar k\Gamma\rho_{ee}$ , Doppler cooling, radiation pressure force
+    - $\rho_{ee}$ : excited state probability
+        - $\rho_{ee}=\frac{\Omega^2}{\Gamma^2+4(\Delta-kv)^2}$
+        - in the limit of low saturation (??)
+            - In what case would $I_{sat}$ be low?
+    - Linear expansion $\sim v$ velocity: ( $v\approx 0$ )
+        - $F=F_0+\left.\frac{d F}{d v}\right|_{v=0} v$
+            - $F_0=\hbar k \Gamma \frac{\Omega^2}{\Gamma^2+4 \Delta^2}$
+                - radiation pressure force which *displace* the ion *slightly* (against trapping) from the center of the trap.
+            - $\left.\frac{d F}{d v}\right|_{v=0}=F_0 \frac{8 k \Delta}{\Gamma^2+4 \Delta^2}$
+                - velocity-dependent $\rarr$ viscous drag if $\Delta < 0$
+    - $\dot{E}_{c o o l}=\langle F v\rangle=\left\langle\left(F_0+\left.\frac{d F}{d v}\right|_{v=0} v\right) v\right\rangle=\left.\frac{d F}{d v}\right|_{v=0}\left\langle v^2\right\rangle$ : Energy dissipation rate due to cooling
+    - Heating rate due to spontaneous emission recoil:
+        - $\dot{E}_{\text {heat }}^{e m}=\frac{1}{2 m} \frac{d}{d t}\left\langle p^2\right\rangle=\frac{1}{2 m}(\hbar k)^2 \Gamma\left\langle\rho_{e e}(v)\right\rangle \approx \frac{1}{2 m}(\hbar k)^2 \Gamma \rho_{e e}(v=0)$
+            - how to get the first "$=$"?
+    - Doppler Limit : $\dot{E}_{\text {cool }}+\dot{E}_{\text {heat }}=\left.0 \Longleftrightarrow \frac{d F}{d v}\right|_{v=0}\left\langle v^2\right\rangle=\frac{1}{m}(\hbar k)^2 \Gamma \rho_{\text {ee }}(v=0)$
+    - Doppler temperature: $k_B T=\frac{\hbar \Gamma}{4}\left(\frac{\Gamma}{-2 \Delta}+\frac{-2 \Delta}{\Gamma}\right)$
+        - $k_B T_{\min }=\frac{\hbar \Gamma}{2}=: \frac{\hbar \Gamma}{4}(1+\alpha) $ with $ \alpha=1$ and with detuning $\Delta=-\Gamma/2$
+            - Assumed photon from spontaneous decay in the direction of laser
+                - $\alpha=1/3$ for isotropically emission
+                    - because recoil diffusion spread in 3 directions instead of 1.
+                        - the "1" has not been understood yet, but take it as true... (??)
+                    - atomic transition in dipole radiation pattern : $\alpha = 2/5$
+            - Continuously adjusting $\Delta$ during Doppler cooling?
+    - sidestory: 
+        - many similarities to Brownian motion
+        - the above simple case: Ornstein-Uhlenbeck process
+            - random walk in momentum space 
+                - with a linear drift, and
+                - with a constant diffusion coefficient
+        - In the stationary state, momentum distribution has a Gaussian shape, so that a thermal distribution results for the energy level occupation
 ----
 #### 3.2.2 Sideband cooling
+- cooling rate: $R_n=\Gamma \frac{(\eta \sqrt{n} \Omega)^2}{2(\eta \sqrt{n} \Omega)^2+\Gamma^2}$
+    - product of the decay rate of the excited level and its occupation probability
+- The lifetime of the upp er level maybe artificially shortened by coupling it to an auxiliary level that has a higher decay rate.
+
+<img src="Images/sideband_cooling.png" alt="sideband_cooling.png" width="1000000"/>
+
+- heating due to non-resonant excitation 
+    - prevent $\ket{n=0}$ from being dark
+    - thus a minimum energy limit
+    - Raman transition??
+
+<img src="Images/non-resonant_heating.png" alt="non-resonant_heating.png" width="1000000"/>
+
 ----
 ### 3.3 Quantum State Manipulation and Analysis       
 ----

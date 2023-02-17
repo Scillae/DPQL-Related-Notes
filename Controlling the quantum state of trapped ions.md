@@ -35,7 +35,7 @@
     - $H_0 =\frac{p^2}{2 m}+\frac{1}{2} m \omega^2 x^2+\frac{1}{2} \hbar \nu \sigma_z$
         - $\nu$ : transition frequency
     - $H_1 =\frac{1}{2} \hbar \Omega\left(\sigma^{+}+\sigma^{-}\right)\left(e^{i\left(k x-\nu_L t+\phi\right)}+e^{-i\left(k x-\nu_L t+\phi\right)}\right)$
-        - $\Omega$ : Coupling strength ($\frac{eE_0}{\hbar}$ ??)
+        - $\Omega$ : Coupling strength ($\frac{eE_0}{\hbar}$ ?? $\Omega_{rabi}$ ??)
         - k : the wavevector of laser
         - $\nu_L$ : the frequency of laser
         - being imaginary exponential: representing the actual (relative) phase that the atom sees.
@@ -91,20 +91,106 @@
         - where $a^\dagger_m$ and $a_m$ are the creation and annihilation operators for the normal modes of oscillation labelled 1...m
         - Go ref[57] for how to obtain (calculate?) $\eta_m^i$
 - Experimental realizations of the model
-    - 
-
+    - the atomic levels should *NOT* couple strongly to other radiation modes of the EM field
+        - (other radiation modes??)
+            - no spontaneous decay to undesired levels?
+            - imperfect laser carrying multiple frequencies somehow?
+        - levels should be stable or metastable
+            - so use hyperfine or Zeeman ground
+            - or use a quadrupole allowed transition, with a metastable and a ground state
+                - spontaneous decay rate lowered $\sim (ka_0)^2$ compared to dipole-allowed transition
+    - $\Omega$ in $H_1$ : $\Omega=\left|\frac{e E_0}{2 \hbar}\left\langle S, m|(\boldsymbol{\epsilon} \cdot \mathbf{r})(\mathbf{k} \cdot \mathbf{r})| D, m^{\prime}\right\rangle\right|$
+        - $E_0$ : electric field amplitude
+        - $\mathbf{r}$ : position operator, from COM of atom to valence electron
+        - $m, m'$ : magnetic quantum number ($L_z$)
+        - $\mathbf{\epsilon}$ : polarization of the laser
+        - $\mathbf{k}$ : wave vector of the laser
+    - example mechanisms causing decoherence:
+        - fluctuations of the laser phase
+        - fluctuations of the magnetic field (what's this??)
+        - fluctuations of the trap frequency
+    - $\Omega$ Rabi frequency must be $\gg$ overall rate of decoherence
+        - Typically, $\Omega_{min}\sim 10$ kHz
+            - Coupling strength $\Omega \approx \frac{k E_0}{2 \hbar} e a_0^2$
+                - $\Omega\sim\Omega_{rabi}$ ??
+            - $E_0\approx 4000 V/m$ 
+                - $\sim 20\mu W$ laser shining at $(30\mu m)^2$ spot
+                - increase by $\eta^{-2}$ if using dipole transition (ex. $\ket{S,0}\lrarr\ket{D,1}$)
 ----
 ### 3.2 Laser Cooling
+- $\omega \sim \Gamma$ : secular motion vs thermal walk
+    - $\omega\ll\Gamma$ : Doppler cooling
+        - spacing of sidebands $\ll$ absorption width of the transition ($\Gamma$ due to Doppler effect)
+            - ion behaves like a particle seeing a time-dependent Doppler-shifted laser frequency
+                - velocity of ion due to potential (secular) changes slower than photon emission/absorption
+                    - directly changing the ion's momentum instanteneously, without any other effect
+                    - classical cooling
+        - cooling the thermal walk
+    - $\omega\gg\Gamma$ : sideband cooling
+        - J-C model, red sideband $\rarr E_{absorb} < E_{Emit}$ for photons
+            - quantized cooling 
+            - cooling the secular motion
+    - $\Gamma_{micromotion}\ll\Gamma_{laser}$, so micro-motion is not worried about 
 ----
 #### 3.2.1 Doppler cooling
 ----
 #### 3.2.2 Sideband cooling
 ----
-### 3.3 Quantum State Manipulation and Analysis
+### 3.3 Quantum State Manipulation and Analysis       
 ----
 #### 3.3.1 Electron Shelving
+- Electron shelving
+    - discriminate between two internal states with efficiency $\sim 1$
+    - Example: weak $\ket{S}\lrarr\ket{D}$ , strong $\ket{S}\lrarr\ket{P}$ , using $\ket{S}\lrarr\ket{D}$ ($\ket{D}$ metastable)
+        - driving $\ket{S}\lrarr\ket{P}$ with a laser
+            - if in $\ket{D}$, no fluorescence
+            - if in $\ket{S}$ , $\ket{S}\lrarr\ket{P}$ emits photons
+            - repeat state preparation (??) and fluorescence detection to determine state occupation
+                - error rate $\sim 0.1\%$
+        - only gets coefficients, not phase??
+
 ----
-#### 3.3.2 Quantum State Analysis
+#### 3.3.2 Manipulation of the ion's quantum state
+- ($\frac{\pi}{2}$ pulse: along which axis?? should be Y:$\ket{0}\rarr\ket{+}$? does not matter if $\pi$ or $2\pi$ )
+----
+#### 3.3.3 Quantum State Analysis
+- Determination of the distribution of motional states
+    - detects the actual occupations of motional states
+    - Didn't quite get it
+    - "the signal", which signal?
+- Temperature measurements:
+    - detects the mean occupation number of motional states (effective temperature)
+    - 3 Methods *if in L-D regime*
+        - Method 1:
+            - incoherently exciting and saturating red sideband, measure population on $\ket{D}$
+                - $\pi$ pulse??
+                - what's incoherently??
+                - why saturating??
+            - incoherently exciting and saturating blue sideband, measure population on $\ket{D}$
+            - population on ground: $p_0=1-\frac{p(\Delta=-\omega)}{p(\Delta=+\omega)}$
+                - rsb: population not on ground ; bsb: total population (1??)
+            - assuming a substantial population on motional ground state
+                - rsb excitation small
+        - Method 2:
+            - incoherently excited without saturating the carrier
+                - what about sideband?? incoherently exciting and saturating red sideband??
+            - $\frac{p(\Delta=-\omega)}{p(\Delta=0)}=\sum_n p_n \frac{(\eta \sqrt{n} \Omega)^2}{\Omega^2}=\eta^2 \bar{n}$
+                - get $\eta$ in advance:
+                    - directly calculated
+                    - determined experimentally by measuring the Rabi frequencies on the carrier and the first sideband.
+                        - J-C model, $\eta$ before sideband strength
+        - Method 3:
+            - Coherent excitation of the carrier with a pulse of length
+            - $p_D(t)=\frac{1}{2}\left\{1-\sum_n \rho_{n, n} \cos \left(\Omega\left(1-\eta^2 n\right) t\right)\right\} \approx \frac{1}{2}\left\{1-\frac{\cos (2 \Omega t)+2 \Omega t \eta^2(\bar{n}+1) \sin (2 \Omega t)}{1+\left(2 \Omega t \eta^2(\bar{n}+1)\right)^2}\right\}$
+                - Dampted Rabi Oscillation
+                    - Forgot why dampted... Decoherence??
+            - The loss of contrast is related to the mean vibrational quantum number
+                - but why??
+        - last two methods are useful for checking whether the theoretical cooling limit is approached after Doppler cooling
+        
+            
+
+
 ----
 ### 3.4 Sideband Cooling and Quantum State Manipulation of $\textrm{Ca}^+$ Ions
 ----

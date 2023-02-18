@@ -233,22 +233,104 @@
         - last two methods are useful for checking whether the theoretical cooling limit is approached after Doppler cooling
         
             
-
-
 ----
 ### 3.4 Sideband Cooling and Quantum State Manipulation of $\textrm{Ca}^+$ Ions
 ----
 #### 3.4.1 Level Scheme of $\textrm{Ca}^+$ Ions
+- $\ket{3^2D_{3/2,5/2}}$ are stable with respected to (original) $\ket{4^2S_{1/2}}$
+    - quadrupole transition
+    - lifetime: 1 s
+<img src="Images\transition_wavelength&lifetime.png" alt="transition_wavelength&lifetime.png" width="100000"/>
+
+- Landé factors $g_J$: determine the energy splitting of the Zeeman levels in a magnetic field
+<img src="Images\lande-g_factors.png" alt="lande-g_factors.png" width="100000"/>
+- branching ratios: determine the relative strength of transitions
+<img src="Images\branching_ratios.png" alt="branching_ratios.png" width="100000"/>
+    - spontaneous decay??
+
 ----
 #### 3.4.2 Cooling Techniques
+- Doppler cooling
+    - $\ket{S_{1/2}}\lrarr\ket{P_{1/2}}$ linewidth: 20 MHz
+        - suitable for Doppler cooling (why??)
+        - 397 nm, $-\Gamma/2=-10$ MHz detuned (why??)
+    - 6% possibility $\ket{P_{1/2}}\lrarr\ket{D_{3/2}}$, and $\ket{D_{3/2}}$ is dark
+        - open 866 nm repumping on $\ket{D_{3/2}}\lrarr\ket{P_{1/2}}$
+        - on resonance
+        - repumping laser needs to have a polarization component perpendicular to the quantization axis
+            - quantization axis is set in advance by a small magnetic field (few Gauss) 
+    - results: (for 1 MHz trap)
+        - $\bar{n}=10$
+        - $\eta_{729}=0.096$
+            - $\eta_{729}^2\bar{n}= 0.092 \ll 1$
+        - $\eta_{393}=0.179$
+            - $\eta_{393}^2\bar{n}= 0.320 < 1$ acceptable
+        - $\bar{n}=2$ expected if 5 MHz trap were used
+- Sideband cooling
+    - choose $\ket{S_{1/2}}\lrarr\ket{D_{5/2}}$ (why??)
+        - stimulated emission in the same direction of laser (recoil is not cooling), spontaneous decay in random direction (recoil is cooling)
+        - $\ket{D_{5/2}}$ quadrupole metastable, no strong spontaneous decay by itself
+    - drive $\ket{D_{5/2}}\lrarr\ket{P_{3/2}}$ ,*quenching*
+        - 3-level cooling, population on $\ket{D_{5/2}}$ is quenched
+    - Zeeman splitting exists because quantization axis is needed for cooling (but only seen necessity in Doppler??)
+    - finalized protocol:
+        - $\ket{S_{1/2}(m=-1/2)}\lrarr\ket{D_{5/2}(m=-5/2)}$
+            - detuned by $\omega$
+        - $\ket{D_{5/2}(m=-5/2)}\lrarr\ket{P_{3/2}(m=-3/2)}$
+            - on resonance
+        - Pumping to other $\ket{D_{5/2}}$ levels is prevented by the quenching laser
+        - excitation to $\ket{D_{3/2}}$ is recycled by the Doppler repumping laser (866 nm, $\ket{D_{3/2}}\lrarr\ket{P_{1/2}}$)
+        - decay to $\ket{S_{1/2}(m=+1/2)}$ is counteracted by the Doppler cooling laser (397 nm, $\ket{S_{1/2}}\lrarr\ket{P_{1/2}}$), with $\sigma^-$ polarization
+            - (how to obtain $\sigma^-$ polarization ?? circular?)
+            - if not perfectly circularly polarized, $\ket{S_{1/2}(m=-1/2)}$ is excited
+                - S level is broadened by the coupling (what of S-level is broadened??)
+                - sideband cooling is impeded by Doppler 'cooling': now heating since sub-Doppler
+                - so, $\ket{S_{1/2}}$ should not be continuously pumped out, but by short pulses    
+                    - in experiment, populated after 80-160 cycles, 
+                        - number of cycles depending on the angle between the polarization and the component of the magnetic field that is perpendicular to the wavevector(k) of the laser
+                        - not impacting the cooling efficiency, so only pumped back after cooling
+        - no other frequencies of Zeeman transitions below $\ket{S_{1/2}(m=-1/2)}\lrarr\ket{D_{5/2}(m=-5/2)}$, but not true for + ones. So, $\ket{S_{1/2}(m=-1/2)}\lrarr\ket{D_{5/2}(m=-5/2)}$, not $\ket{S_{1/2}(m=+1/2)}\lrarr\ket{D_{5/2}(m=+5/2)}$
+        - tune Zeeman splitting with external magnetic field to make frequencies of unwanted transitions avoid overlapping with the target transition
+            - $\Delta E=g_j\mu_BBm_j$
+            - 4 Gauss $\rarr$ 30 MHz spread
+            - too high: broadening the $\ket{S_{1/2}}\lrarr\ket{P_{1/2}}$ doppler transition, and increasing the Doppler limit.
+                
 ----
 #### 3.4.3 Coherent Manipulations: Geometrical Considerations
+- by a proper choice of the polarization and the laser beam direction, to suppress excitation on some transitions is possible
+    - geometric dependence of the coupling strength $\Omega$
+    - (didn't understand......??)
 ----
 #### 3.4.4 Pulsed Spectroscopy on the $S_{1/2}\lrarr D_{5/2}$ transition
+- Doppler cooling. 
+    - The ion is pumped to the electronic ground state and precooled on the $\ket{S_{1/2}}\lrarr\ket{P_{1/2}}$ dipole transition to a mean vibrational quantum number between 2 and 10. (397 nm)
+    - After cooling it is prepared in the $\ket{S_{1/2}(m=-1/2)}$ level.
+- sideband cooling.
+    - (729 nm, $\delta=-\omega$) red sideband laser lowers the motional state.
+    - (854 nm) quenching laser shortens the lifetime
+        - quenching: make the effective decay rate $\sim$ the Rabi frequency on the sideband
+        - adjust the laser intensity for optimum cooling results
+        - If several normal modes of the ion's motion are to be cooled to the ground state, the tuning of the cooling laser has to be sequentially alternated between the different sidebands. (why?? why not only 1st sideband, and lowering step by step??)
+        - at the end of cooling, pumping $\ket{D_{5/2}}$ is pumped back to $\ket{S_{1/2}}$.
+        - to further ensure $\ket{S_{1/2}(m=-1/2)}$ prepared, a short pulse of circular ($\sigma_-$) polarized laser is applied.
+- quantum state engineering
+    - manipulated the motional state of the ion
+        - applying pulses of varying frequency and duration on the quadrupole transition
+- quantum state analysis
+    - ... basically the same as previous?
+- detection
+    - turn on doppler lasers (397 nm, $\ket{S_{1/2}}\lrarr\ket{P_{1/2}}$, and 866 nm , $\ket{D_{3/2}}\lrarr\ket{P_{1/2}}$), and measure fluorescence. 
+    - Determine the state by comparing the number of counts with a threshold
+        - how to detect an entangled state??
+
+<img src="Images/pulse_sequence_example.png" alt="pulse_sequence_example.png" width="100000"/>
+
+- run the above (not the chart) sequence 100 times to get the population occupation
 ----
 
 ----
 ## Chapter 4 Experimental Setup
+<img src="Images/experimental_setup.png" alt="experimental_setup.png" width="10000">
 ----
 ### 4.1 Ion Trap Apparatus
 ----
